@@ -1,27 +1,11 @@
-
 pipeline {
-         agent {
-                 label {
-                         label 'built-in'
-                         customworkspace '/mnt/myproject'
-                    
-                      }
-              }
-              
-                stages {
+    agent any
 
-                       stage ('stage-1') {
-                                    steps {
-                                          sh "mkdir test"
-                              }
-                          }
+    stages {
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+            }
+        }
+    }
 
-                    stages {
-
-                       stage ('stage-2') {
-                                    steps {
-                                          sh "mkdir folder1"
-                              }
-                          }
-       }
-}
